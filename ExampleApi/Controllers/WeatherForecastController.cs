@@ -9,12 +9,13 @@ namespace ExampleApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        IWorkersRepository _workersRepository;
+       private IWorkersRepository _workersRepository;
 
         public WeatherForecastController(IWorkersRepository workersRepository)
         {
             _workersRepository = workersRepository;
         }
+
         [HttpGet]
         public IEnumerable<Workers> Get()
         {
